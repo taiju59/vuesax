@@ -25,7 +25,8 @@ export default {
   close(elx){
     let el = elx || 'body > .con-vs-loading'
     let loadings = document.querySelectorAll(el)
-    loadings.forEach((loading)=>{
+    let loadingsArray = Array.prototype.slice.call(loadings, 0)
+    loadingsArray.forEach((loading)=>{
       loading.classList.add('beforeRemove')
       setTimeout(()=>{
         loading.remove()
